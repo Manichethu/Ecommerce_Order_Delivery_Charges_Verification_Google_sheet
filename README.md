@@ -1,32 +1,52 @@
-# Ecommerce_Order_Delivery_Charges_Verification_Google_sheet
-This Google Sheets project tackles an ecommerce challenge, verifying courier charges' accuracy for an Indian company (X). Using internal order data and courier invoices, this solution calculates weights, zones, and charges. The resulting sheet highlights discrepancies, aiding cost validation for X.
-Business Scenario
-X, a leading ecommerce platform in India, collaborates with multiple courier companies for timely order deliveries. The charges imposed by courier firms are determined by the weight of products and the distance between the warehouse and the customer's delivery address. The company aims to confirm the correctness of these charges due to their significant financial impact.
+# Overview:
+In this project, you are a data analyst working with a large e-commerce company in India (referred to as "X"). X partners with multiple courier companies for order deliveries, and the charges for each delivery depend on the product's weight and the distance between the warehouse and the customer's address. The goal of this project is to verify if the charges levied by the courier companies for each order are correct. This verification is crucial as the charges significantly impact X's expenses.
 
-Solution Approach
-Data Compilation: Gather data from X's internal sources, which includes the website order report, SKU master with product weights, and the warehouse-to-delivery-zone mapping. Also, gather the courier company's invoice data that includes AWB numbers, order IDs, shipment weights, pin codes, zones, charges, and shipment type.
+# Problem Statement:
+X has thousands of daily orders, and they spend a substantial amount on courier charges, approximately Rs. 1 crore per month. They need to ensure that the courier companies are billing them accurately for each order. To tackle this challenge, you have access to two sets of data: X's internal data and courier company invoices.
 
-Using Google Sheets/Excel: Utilize Google Sheets or Excel for data processing, calculations, and comparisons. Set up appropriate formulas, functions, and tables to facilitate the analysis.
+# Dataset Description:
+## 1.) Input Data
+Left Hand Side (LHS) Data (X's Internal Data):
 
-Charges Validation: Calculate the total weight and the corresponding weight slab for each order using SKU weights. Apply the appropriate weight slabs according to the courier company's calculations. Determine delivery zones based on the warehouse-to-zone mapping. Apply charges from the courier company's rate card, considering both "forward charges" and "forward and RTO charges" scenarios.
+Website order report with Order IDs and product details.
+SKU master with product weights.
+Warehouse pincode to All India pincode mapping.
+Right Hand Side (RHS) Data (Courier Company Invoices):
 
-Resultant Sheet/Workbook: Create a new sheet or workbook in Google Sheets/Excel to document the analysis. This will include columns for order IDs, AWB numbers, weight details, delivery zones, expected charges as per X's data, charges billed by the courier company, and the variance between expected and billed charges.
+Invoice in CSV format containing AWB Number, Order ID, shipment weight, pickup pincode, delivery pincode, delivery zone, charges per shipment, and shipment type. Courier charges rate card specifying rates at weight slab and pincode levels.
 
-Repository Structure
-ecommerce_charges_verification.xlsx: Sample Excel file showcasing how the data could be organized and calculated.
+## A) Output Data 1:
+Create a resultant CSV/Excel file with the following columns:
 
-ecommerce_charges_verification_google_sheets.png: A screenshot illustrating how the same analysis could be performed in Google Sheets.
+Order ID
+AWB Number
+Total weight as per X (KG)
+Weight slab as per X (KG)
+Total weight as per Courier Company (KG)
+Weight slab charged by Courier Company (KG)
+Delivery Zone as per X
+Delivery Zone charged by Courier Company
+Expected Charge as per X (Rs.)
+Charges Billed by Courier Company (Rs.)
+Difference Between Expected Charges and Billed Charges (Rs.)
 
-How to Use
-Download the ecommerce_charges_verification.xlsx file or replicate the structure in your preferred spreadsheet software.
+## B) Output Data 2:
+Create a summary table to consolidate the results.
 
-Input your own data into the relevant columns based on the provided examples.
+Steps to Solve the Challenge:
 
-Use formulas and functions to perform the weight calculations, charges application, and zone mapping.
+Calculate the total weight of each shipment based on product weights and weight slabs.
+Determine the delivery zone for each order using pincode mapping data.
+Compare the calculated values (weight, delivery zone) with the values reported in the courier company invoices.
+Calculate the expected charges for each order based on the courier charges rate card.
+Compare the expected charges with the charges billed by the courier company to identify any discrepancies.
+Generate Output Data 1 and a summary table (Output Data 2) to provide a detailed and summarized view of the discrepancies.
 
-Compare the expected charges and the billed charges to identify any discrepancies.
+# Key Objectives:
+Verify the accuracy of courier charges per order.
+Identify and report discrepancies between expected and billed charges.
+Ensure that X is not overpaying for courier services.
+Streamline the billing process with courier companies for cost optimization
 
-Customize the solution to align with your specific data and business needs.
+![ecommerce courrier data](https://github.com/ManikantaBN/Ecommerce_Order_Delivery_Charges_Verification_Google_sheet/assets/141845485/4fb66af3-3763-4f29-b8b8-5054d9f52bb1)
 
-Note
-This project provides a conceptual approach to solving the challenge using Google Sheets/Excel. The data and examples are for demonstration purposes only and do not reflect actual business data.
